@@ -18,7 +18,7 @@ public class PersistenceUtility {
 			// override tccl so persistence unit can be found from within kjar
 			Thread.currentThread().setContextClassLoader(cl);
 			
-			emf = Persistence.createEntityManagerFactory("org.jbpm.domain");
+			emf = Persistence.createEntityManagerFactory("com.myspace:expensesCMS:1.0.0");
 			
 			return emf;
 		} finally {
