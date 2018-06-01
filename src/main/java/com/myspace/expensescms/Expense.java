@@ -9,92 +9,103 @@ public class Expense implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "EXPENSE_ID_GENERATOR")
+	@javax.persistence.GeneratedValue(generator = "EXPENSE_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
 	@javax.persistence.Id
 	@javax.persistence.SequenceGenerator(sequenceName = "EXPENSE_ID_SEQ", name = "EXPENSE_ID_GENERATOR")
-	private java.lang.Long id;
+	private Long id;
 
-	@org.kie.api.definition.type.Label(value = "Employee")
-	private java.lang.String employee;
+	@org.kie.api.definition.type.Label("Employee")
+	private String employee;
 
-	@org.kie.api.definition.type.Label(value = "Location")
-	private java.lang.String location;
+	@org.kie.api.definition.type.Label("Location")
+	private String location;
 
-	@org.kie.api.definition.type.Label(value = "Department")
-	private java.lang.String department;
+	@org.kie.api.definition.type.Label("Department")
+	private String department;
 
-	@org.kie.api.definition.type.Label(value = "Subject")
-	private java.lang.String subject;
+	@org.kie.api.definition.type.Label("Subject")
+	private String subject;
 
-	@org.kie.api.definition.type.Label(value = "Amount")
-	private java.lang.Double amount;
+	@org.kie.api.definition.type.Label("Amount")
+	private Double amount;
 
-	@org.kie.api.definition.type.Label(value = "Approved")
-	private java.lang.Boolean approved = false;
+	@org.kie.api.definition.type.Label("Approved")
+	private Boolean approved = false;
+
+	@org.kie.api.definition.type.Label(value = "Date")
+	private java.util.Date date;
 
 	public Expense() {
 	}
 
-	public java.lang.Long getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(java.lang.Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public java.lang.String getEmployee() {
+	public String getEmployee() {
 		return this.employee;
 	}
 
-	public void setEmployee(java.lang.String employee) {
+	public void setEmployee(String employee) {
 		this.employee = employee;
 	}
 
-	public java.lang.String getLocation() {
+	public String getLocation() {
 		return this.location;
 	}
 
-	public void setLocation(java.lang.String location) {
+	public void setLocation(String location) {
 		this.location = location;
 	}
 
-	public java.lang.String getDepartment() {
+	public String getDepartment() {
 		return this.department;
 	}
 
-	public void setDepartment(java.lang.String department) {
+	public void setDepartment(String department) {
 		this.department = department;
 	}
 
-	public java.lang.String getSubject() {
+	public String getSubject() {
 		return this.subject;
 	}
 
-	public void setSubject(java.lang.String subject) {
+	public void setSubject(String subject) {
 		this.subject = subject;
 	}
 
-	public java.lang.Double getAmount() {
+	public Double getAmount() {
 		return this.amount;
 	}
 
-	public void setAmount(java.lang.Double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
-	public java.lang.Boolean getApproved() {
+	public Boolean getApproved() {
 		return this.approved;
 	}
 
-	public void setApproved(java.lang.Boolean approved) {
+	public void setApproved(Boolean approved) {
 		this.approved = approved;
 	}
 
-	public Expense(java.lang.Long id, java.lang.String employee,
-			java.lang.String location, java.lang.String department,
-			java.lang.String subject, java.lang.Double amount,
-			java.lang.Boolean approved) {
+	public java.util.Date getDate() {
+		return this.date;
+	}
+
+	public void setDate(java.util.Date date) {
+		this.date = date;
+	}
+
+	public Expense(Long id, String employee,
+			String location, String department,
+			String subject, Double amount,
+			Boolean approved, java.util.Date date) {
 		this.id = id;
 		this.employee = employee;
 		this.location = location;
@@ -102,6 +113,7 @@ public class Expense implements java.io.Serializable {
 		this.subject = subject;
 		this.amount = amount;
 		this.approved = approved;
+		this.date = date;
 	}
 
 }
